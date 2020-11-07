@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports (no 1) - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+        <th>Number</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>HealthCheck</td>
+        <td>1</td>
+      <td>05 Nov 2020, 08:55</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">com.rapidadvance.step_definition.CPHomeStepDef.user_should_be_able_to_Sign_out_of_account()</td>
+              <td>1</td>
+              <td class="duration" data-value="1000000">0.001</td>
+              <td class="duration" data-value="1000000">0.001</td>
+              <td class="duration" data-value="1000000">0.001</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.rapidadvance.step_definition.CPHomeStepDef.user_should_be_on_U_S_Small_Business_Administration_home_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="4000000">0.004</td>
+              <td class="duration" data-value="4000000">0.004</td>
+              <td class="duration" data-value="4000000">0.004</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.rapidadvance.step_definition.CPHomeStepDef.user_should_confirm_contact_information_by_clicking_on_confirm_button_if_the_contact_information_has_NOT_been_confirmed_in_the_last_twelve_months()</td>
+              <td>1</td>
+              <td class="duration" data-value="17000000">0.017</td>
+              <td class="duration" data-value="17000000">0.017</td>
+              <td class="duration" data-value="17000000">0.017</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.rapidadvance.step_definition.CPSignInStepDef.user_Clicks_on_Sign_in_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="673000000">0.673</td>
+              <td class="duration" data-value="673000000">0.673</td>
+              <td class="duration" data-value="673000000">0.673</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.rapidadvance.step_definition.CPSignInStepDef.user_enters_email_into_Username_or_email_field_and_password_into_Password_field()</td>
+              <td>1</td>
+              <td class="duration" data-value="128000000">0.128</td>
+              <td class="duration" data-value="128000000">0.128</td>
+              <td class="duration" data-value="128000000">0.128</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.rapidadvance.step_definition.CPSignInStepDef.user_should_be_able_to_navigate_to_Sign_in_Page()</td>
+              <td>1</td>
+              <td class="duration" data-value="842000000">0.842</td>
+              <td class="duration" data-value="842000000">0.842</td>
+              <td class="duration" data-value="842000000">0.842</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.rapidadvance.step_definition.DmsDocsStepDef.user_should_go_back_to_Rapid_Decision_Page_from_Deal_Documents_List_Page()</td>
+              <td>1</td>
+              <td class="duration" data-value="47000000">0.047</td>
+              <td class="duration" data-value="47000000">0.047</td>
+              <td class="duration" data-value="47000000">0.047</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.rapidadvance.step_definition.Hooks.launchBrowser(io.cucumber.java.Scenario)</td>
+              <td>3</td>
+              <td class="duration" data-value="10741000000">10.741</td>
+              <td class="duration" data-value="10741000000">22.068</td>
+              <td class="duration" data-value="32223000000">32.223</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.rapidadvance.step_definition.Hooks.tearDownCP(io.cucumber.java.Scenario)</td>
+              <td>3</td>
+              <td class="duration" data-value="723666666">0.723</td>
+              <td class="duration" data-value="723666666">0.804</td>
+              <td class="duration" data-value="2171000000">2.171</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.rapidadvance.step_definition.NotesLinkStepDef.user_should_go_back_to_Rapid_Decision_Page_from_Notes_Page()</td>
+              <td>1</td>
+              <td class="duration" data-value="52000000">0.052</td>
+              <td class="duration" data-value="52000000">0.052</td>
+              <td class="duration" data-value="52000000">0.052</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.rapidadvance.step_definition.NotesLinkStepDef.user_should_validate_title_and_logo_of_the_page_that()</td>
+              <td>1</td>
+              <td class="duration" data-value="25000000">0.025</td>
+              <td class="duration" data-value="25000000">0.025</td>
+              <td class="duration" data-value="25000000">0.025</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.rapidadvance.step_definition.RapidDecisionStepDef.Last_Stage_Name_should_be_the_same_as_Stage_status_on_Rapid_Decision_Page()</td>
+              <td>1</td>
+              <td class="duration" data-value="3041000000">3.041</td>
+              <td class="duration" data-value="3041000000">3.041</td>
+              <td class="duration" data-value="3041000000">3.041</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.rapidadvance.step_definition.RapidDecisionStepDef.user_clicks_on_DMS_Docs_link_and_User_will_be_on_Deal_Documents_List_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="2147000000">2.147</td>
+              <td class="duration" data-value="2147000000">2.147</td>
+              <td class="duration" data-value="2147000000">2.147</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.rapidadvance.step_definition.RapidDecisionStepDef.user_clicks_on_Notes_link_and_Notes_Window_should_appear()</td>
+              <td>1</td>
+              <td class="duration" data-value="8178000000">8.178</td>
+              <td class="duration" data-value="8178000000">8.178</td>
+              <td class="duration" data-value="8178000000">8.178</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.rapidadvance.step_definition.RapidDecisionStepDef.user_hovers_over_Stage_status()</td>
+              <td>1</td>
+              <td class="duration" data-value="3177000000">3.177</td>
+              <td class="duration" data-value="3177000000">3.177</td>
+              <td class="duration" data-value="3177000000">3.177</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.rapidadvance.step_definition.RapidDecisionStepDef.user_validates_Application_Number_and_DBA_Name_on_Rapid_Decision_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="39000000">0.039</td>
+              <td class="duration" data-value="39000000">0.039</td>
+              <td class="duration" data-value="39000000">0.039</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.rapidadvance.step_definition.RapidDecisionStepDef.user_verifies_number_and_names_of_related_deals()</td>
+              <td>1</td>
+              <td class="duration" data-value="238000000">0.238</td>
+              <td class="duration" data-value="238000000">0.238</td>
+              <td class="duration" data-value="238000000">0.238</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.rapidadvance.step_definition.RapidDecisionStepDef.user_verifies_that_DMS_Docs_link_is_present_on_The_Rapid_Decision_Page()</td>
+              <td>1</td>
+              <td class="duration" data-value="145000000">0.145</td>
+              <td class="duration" data-value="145000000">0.145</td>
+              <td class="duration" data-value="145000000">0.145</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.rapidadvance.step_definition.RapidDecisionStepDef.user_verifies_that_Notes_link_is_present_on_The_Rapid_Decision_Page()</td>
+              <td>1</td>
+              <td class="duration" data-value="165000000">0.165</td>
+              <td class="duration" data-value="165000000">0.165</td>
+              <td class="duration" data-value="165000000">0.165</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.rapidadvance.step_definition.RapidDecisionStepDef.user_verifies_that_Related_Deals_link_is_present_on_The_Rapid_Decision_Page()</td>
+              <td>1</td>
+              <td class="duration" data-value="260000000">0.260</td>
+              <td class="duration" data-value="260000000">0.260</td>
+              <td class="duration" data-value="260000000">0.260</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.rapidadvance.step_definition.RapidDecisionStepDef.user_verifies_the_page_logo_page_title_and_Rapid_Decision_text_presence()</td>
+              <td>1</td>
+              <td class="duration" data-value="54000000">0.054</td>
+              <td class="duration" data-value="54000000">0.054</td>
+              <td class="duration" data-value="54000000">0.054</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.rapidadvance.step_definition.SBAExistingDealsStepDef.user_clicks_on_Company_Legal_Name_link_in_order_to_navigate_to_Rapid_Decision_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="5187000000">5.187</td>
+              <td class="duration" data-value="5187000000">5.187</td>
+              <td class="duration" data-value="5187000000">5.187</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.rapidadvance.step_definition.SBAExistingDealsStepDef.user_clicks_on_Log_off_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="210000000">0.210</td>
+              <td class="duration" data-value="210000000">0.210</td>
+              <td class="duration" data-value="210000000">0.210</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.rapidadvance.step_definition.SBAExistingDealsStepDef.user_enters_existing_Application_Number_into_application_number_field_clicks_on_Search_button_and_verifies_that_application_number_is_displayed(java.util.List&lt;java.lang.String&gt;)</td>
+              <td>1</td>
+              <td class="duration" data-value="3721000000">3.721</td>
+              <td class="duration" data-value="3721000000">3.721</td>
+              <td class="duration" data-value="3721000000">3.721</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.rapidadvance.step_definition.SBAExistingDealsStepDef.user_enters_existing_Federal_Tax_Id_into_federal_tax_id_field_clicks_on_Search_button_and_verifies_that_federal_tax_id_is_displayed(java.util.List&lt;java.lang.String&gt;)</td>
+              <td>1</td>
+              <td class="duration" data-value="3135000000">3.135</td>
+              <td class="duration" data-value="3135000000">3.135</td>
+              <td class="duration" data-value="3135000000">3.135</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.rapidadvance.step_definition.SBAExistingDealsStepDef.user_enters_existing_Loan_Number_into_application_loan_number_field_clicks_on_Search_button_and_verifies_that_loan_number_is_displayed(java.util.List&lt;java.lang.String&gt;)</td>
+              <td>1</td>
+              <td class="duration" data-value="3199000000">3.199</td>
+              <td class="duration" data-value="3199000000">3.199</td>
+              <td class="duration" data-value="3199000000">3.199</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.rapidadvance.step_definition.SBAExistingDealsStepDef.user_should_be_on_Small_Business_Administration_home_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="31000000">0.031</td>
+              <td class="duration" data-value="31000000">0.031</td>
+              <td class="duration" data-value="31000000">0.031</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.rapidadvance.step_definition.SBASignInStepDef.user_Clicks_on_Log_in_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="858000000">0.858</td>
+              <td class="duration" data-value="858000000">0.858</td>
+              <td class="duration" data-value="858000000">0.858</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.rapidadvance.step_definition.SBASignInStepDef.user_enters_user_name_into_User_Name_field_and_password_into_Password_field()</td>
+              <td>1</td>
+              <td class="duration" data-value="124000000">0.124</td>
+              <td class="duration" data-value="124000000">0.124</td>
+              <td class="duration" data-value="124000000">0.124</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.rapidadvance.step_definition.SBASignInStepDef.user_should_be_able_to_navigate_to_Login_Page()</td>
+              <td>1</td>
+              <td class="duration" data-value="505000000">0.505</td>
+              <td class="duration" data-value="505000000">0.505</td>
+              <td class="duration" data-value="505000000">0.505</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.rapidadvance.step_definition.TPSExistingDealsStepDef.user_clicks_on_log_off_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="124000000">0.124</td>
+              <td class="duration" data-value="124000000">0.124</td>
+              <td class="duration" data-value="124000000">0.124</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.rapidadvance.step_definition.TPSExistingDealsStepDef.user_should_be_on_task_process_system_home_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="29000000">0.029</td>
+              <td class="duration" data-value="29000000">0.029</td>
+              <td class="duration" data-value="29000000">0.029</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.rapidadvance.step_definition.TPSLogInStepDef.user_clicks_on_login_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="1088000000">1.088</td>
+              <td class="duration" data-value="1088000000">1.088</td>
+              <td class="duration" data-value="1088000000">1.088</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.rapidadvance.step_definition.TPSLogInStepDef.user_enters_password_into_Password_field()</td>
+              <td>1</td>
+              <td class="duration" data-value="56000000">0.056</td>
+              <td class="duration" data-value="56000000">0.056</td>
+              <td class="duration" data-value="56000000">0.056</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.rapidadvance.step_definition.TPSLogInStepDef.user_enters_user_name_into_User_Name_field()</td>
+              <td>1</td>
+              <td class="duration" data-value="68000000">0.068</td>
+              <td class="duration" data-value="68000000">0.068</td>
+              <td class="duration" data-value="68000000">0.068</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.rapidadvance.step_definition.TPSLogInStepDef.user_should_be_able_to_navigate_to_task_process_system_login_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="323000000">0.323</td>
+              <td class="duration" data-value="323000000">0.323</td>
+              <td class="duration" data-value="323000000">0.323</td>
+              <td class="passed">100.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>36</td>
+            <td>40</td>
+            <td class="duration">1.807</td>
+            <td class="duration">32.223</td>
+            <td class="duration">1:12.285</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
